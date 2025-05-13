@@ -25,13 +25,13 @@ func NewUserRepo() UserRepository {
 
 func (r *userRepo) CreateTableIfNotExists() error {
 	// Drop the users table if it exists
-	_, err := config.DB.NewDropTable().Model((*models.User)(nil)).IfExists().Exec(context.Background())
-	if err != nil {
-		return err
-	}
+	// _, err := config.DB.NewDropTable().Model((*models.User)(nil)).IfExists().Exec(context.Background())
+	// if err != nil {
+	// 	return err
+	// }
 
 	// Now create the table
-	_, err = config.DB.NewCreateTable().Model((*models.User)(nil)).IfNotExists().Exec(context.Background())
+	_, err := config.DB.NewCreateTable().Model((*models.User)(nil)).IfNotExists().Exec(context.Background())
 	if err != nil {
 		return err
 	}

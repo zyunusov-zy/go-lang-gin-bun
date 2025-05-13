@@ -13,6 +13,7 @@ func main() {
 	config.ConnectDB()
 
 	routes.AuthRoutes(r)
+	routes.RegisterItemRoutes(r)
 
 	r.Run(":" + config.GetPort())
 }

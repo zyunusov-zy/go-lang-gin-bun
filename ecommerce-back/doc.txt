@@ -1,0 +1,101 @@
+ Ultimate Prompt: Full E-commerce Backend with Go
+Objective:
+Build a production-grade monolithic e-commerce backend in Go using:
+
+🔧 Gin (HTTP router & controllers)
+
+🗄️ Bun ORM with PostgreSQL (DB & models)
+
+🔐 JWT for secure authentication and role-based access
+
+💬 Gorilla WebSocket for real-time consumer ↔ seller chat
+
+💼 Full structure: controllers, services, repositories, models, routes, middlewares, utils
+
+🎯 Features
+Authentication
+JWT-based login/register
+
+Password hashing (bcrypt)
+
+Role-based middleware ("seller" or "consumer")
+
+Item Management (only seller)
+Seller can create/update/delete items
+
+Consumer can list/view items
+
+Shopping (consumer side)
+Add to cart
+
+Create orders
+
+View orders
+
+Real-time Chat (WebSocket)
+Consumer sends message to seller
+
+Seller can respond
+
+WebSocket room/channel per user
+
+Bonus
+Graceful project structure (service interface + controller separation)
+
+Clean Bun models with migrations
+
+Production-ready middleware (error handling, auth)
+
+Pagination, search filters, input validation
+
+🧠 Step-by-Step Implementation Plan (How I’ll Teach You)
+Phase	Focus	Concepts You'll Learn
+1️⃣	Init Project	Gin setup, clean file structure, Go modules
+2️⃣	DB Connection	Bun setup, PostgreSQL config, env management
+3️⃣	Auth (JWT)	Secure login/register with services/controllers
+4️⃣	Middleware	Auth middleware, role-based access
+5️⃣	Models + Migrations	Bun ORM for User, Item, Order, Message, Cart
+6️⃣	Services/Repositories	Dependency injection, clean logic separation
+7️⃣	Items	Seller-only item CRUD
+8️⃣	Cart + Orders	Consumer add to cart, checkout
+9️⃣	WebSocket Chat	WebSocket rooms, Goroutine handling
+🔟	Final Polish	Pagination, graceful errors, test endpoints
+
+
+
+
+🔨 Modules Breakdown
+✅ 1. User Module ✅ (Already done)
+Auth with JWT
+
+Register/Login
+
+Roles (seller/consumer)
+
+Middleware
+
+🛒 2. Item Module (Next Step)
+Seller uploads items/products (POST /items/upload)
+
+Consumer views list of items (GET /items)
+
+Clean architecture: controller → service (interface) → repository → DB (Bun)
+
+💰 3. Order Module
+Consumer buys an item (POST /orders)
+
+Fetch consumer's orders (GET /orders)
+
+Mark order as completed/delivered (for seller)
+
+💬 4. Chat Module (WebSocket with Gorilla)
+One-to-one real-time chat between seller and consumer
+
+Only starts when consumer views item or makes purchase
+
+Save messages to DB
+
+⚙️ 5. Admin Tools (Optional Later)
+Basic dashboard to see all users/items/orders (admin role)
+
+Metrics or logs
