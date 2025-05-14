@@ -14,6 +14,9 @@ func main() {
 
 	routes.AuthRoutes(r)
 	routes.RegisterItemRoutes(r)
+	routes.RegisterOrderRoutes(r)
+
+	
 
 	r.Run(":" + config.GetPort())
 }
