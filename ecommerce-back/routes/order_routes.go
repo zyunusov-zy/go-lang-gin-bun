@@ -23,6 +23,7 @@ func RegisterOrderRoutes(r *gin.Engine) {
 	{
 		orders.POST("/", middlewares.AuthMiddleware(), middlewares.RoleAuthMiddleware("consumer"), orderController.PlaceOrder)
 		orders.GET("/", middlewares.AuthMiddleware(), middlewares.RoleAuthMiddleware("consumer"), orderController.GetMyOrders)
+		// not working
 		orders.GET("/seller", middlewares.AuthMiddleware(), middlewares.RoleAuthMiddleware("seller"), orderController.GetSellerOrders)
 	}
 }

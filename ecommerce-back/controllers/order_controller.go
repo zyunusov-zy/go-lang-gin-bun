@@ -47,6 +47,8 @@ func (oc *OrderController) GetMyOrders(c *gin.Context) {
 	c.JSON(http.StatusOK, orders)
 }
 
+
+// not working 
 func (oc *OrderController) GetSellerOrders(c *gin.Context) {
 	claims := c.MustGet("user").(jwt.MapClaims)
 	sellerID := int64(claims["user_id"].(float64))
